@@ -1,0 +1,10 @@
+#
+#waypoint:name:initials:x:y:z:color:disabled:type:set:rotate_on_tp:tp_yaw:global
+#
+waypoint:Sunny's Village:S:1838:72:66:7:false:0:gui.xaero_default:false:0:false
+waypoint:gui.xaero_deathpoint:D:361:69:-227:0:false:1:gui.xaero_default:false:0:true
+waypoint:Spawn Village:S:-189:68:157:1:false:0:gui.xaero_default:false:0:false
+waypoint:Birb's Place:B:-578:75:264:10:false:0:gui.xaero_default:false:0:false
+waypoint:Old Base:L:56:63:107:6:false:0:gui.xaero_default:false:0:false
+waypoint:Dock:D:87:63:23:0:false:0:gui.xaero_default:false:0:false
+waypoint:BASE:B:317:63:-457:6:false:0:gui.xaero_default:false:0:false

@@ -1,0 +1,6 @@
+#
+#waypoint:name:initials:x:y:z:color:disabled:type:set:rotate_on_tp:tp_yaw:global
+#
+waypoint:stonghold portal:S:-222:77:35:11:false:0:gui.xaero_default:false:0:false
+waypoint:House:N:218:50:-106:2:false:0:gui.xaero_default:false:0:false
+waypoint:nether portal:N:-22:43:-14:7:false:0:gui.xaero_default:false:0:false

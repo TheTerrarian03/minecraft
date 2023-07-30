@@ -1,0 +1,19 @@
+#
+#waypoint:name:initials:x:y:z:color:disabled:type:set:rotate_on_tp:tp_yaw:global
+#
+waypoint:gui.xaero_deathpoint:D:287:34:-414:0:false:1:gui.xaero_default:false:0:true
+waypoint:hole:H:312:62:-484:1:false:0:gui.xaero_default:false:0:false
+waypoint:bhole:B:363:65:-491:1:false:0:gui.xaero_default:false:0:false
+waypoint:hole:H:365:64:-479:7:false:0:gui.xaero_default:false:0:false
+waypoint:bolhe:B:343:62:-439:10:false:0:gui.xaero_default:false:0:false
+waypoint:hole:H:359:67:-461:2:false:0:gui.xaero_default:false:0:false
+waypoint:bhole:B:347:64:-447:13:false:0:gui.xaero_default:false:0:false
+waypoint:hole:H:354:65:-481:8:false:0:gui.xaero_default:false:0:false
+waypoint:DanielGS1's base/igloo:D:-671:69:-1996:10:false:0:gui.xaero_default:false:0:false
+waypoint:FarFarm:F:318:65:-461:8:false:0:gui.xaero_default:false:0:false
+waypoint:Sunny Ville:S:1860:72:40:9:false:0:gui.xaero_default:false:0:false
+waypoint:Underwater Temple?:T:504:62:150:6:false:0:gui.xaero_default:false:0:false
+waypoint:Dock:D:87:63:24:1:false:0:gui.xaero_default:false:0:false
+waypoint:Birb's Place:B:-573:71:251:10:false:0:gui.xaero_default:false:0:false
+waypoint:Home:H:30:64:116:4:false:0:gui.xaero_default:false:0:false
+waypoint:Spawn Village:S:-246:67:138:2:false:0:gui.xaero_default:false:0:false

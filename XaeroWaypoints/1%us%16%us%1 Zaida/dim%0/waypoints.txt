@@ -1,0 +1,5 @@
+waypoint:End Portal:E:979:15:1006:1:false:0:gui.xaero_default:false:0:false
+waypoint:Home Castle:H:395:68:215:3:false:0:gui.xaero_default:false:0:false
+waypoint:Sugar Cane Farm:C:-311:63:227:2:false:0:gui.xaero_default:false:0:false
+waypoint:Village Tiny House:V:540:63:280:14:false:0:gui.xaero_default:false:0:false
+waypoint:Broken Nether Portal:N:967:73:1031:12:false:0:gui.xaero_default:false:0:false

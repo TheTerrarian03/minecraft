@@ -1,0 +1,4 @@
+waypoint:gui.xaero_deathpoint:D:-5527:59:56:0:false:1:gui.xaero_default:false:0:true
+waypoint:gui.xaero_deathpoint_old:D:1496:60:-861:0:false:0:gui.xaero_default:false:0:true
+waypoint:End City 1:E:1714:145:-223:11:false:0:gui.xaero_default:false:0:false
+waypoint:End Portal to OverWorld:E:14:64:1:11:false:0:gui.xaero_default:false:0:false

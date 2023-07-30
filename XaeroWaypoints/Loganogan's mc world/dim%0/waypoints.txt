@@ -1,0 +1,2 @@
+waypoint:hole:H:-86:77:-32:11:false:0:gui.xaero_default:false:0:false
+waypoint:mining hole probably:H:21:70:-52:0:false:0:gui.xaero_default:false:0:false
