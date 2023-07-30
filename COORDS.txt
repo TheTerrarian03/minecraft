@@ -1,0 +1,14 @@
+Original Home
+/tp -79 69 242
+
+Desert Village
+/tp 216 65 210
+
+Bigger Desert
+/tp 124 139 2024
+
+Plains Village
+/tp 46 77 3447
+
+Acacia Island
+/tp -70 64 3960

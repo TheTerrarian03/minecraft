@@ -3221,5 +3221,17 @@
     },
     "done": false
   },
+  "minecraft:recipes/decorations/acacia_hanging_sign": {
+    "criteria": {
+      "has_stripped_logs": "2023-07-29 22:46:29 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stripped_acacia_wood": {
+    "criteria": {
+      "has_log": "2023-07-29 22:46:29 -0700"
+    },
+    "done": true
+  },
   "DataVersion": 3465
 }

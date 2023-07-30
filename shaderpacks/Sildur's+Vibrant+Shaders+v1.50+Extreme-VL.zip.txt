@@ -1,4 +1,4 @@
-#Sat Jul 29 21:52:11 PDT 2023
+#Sat Jul 29 23:48:08 PDT 2023
 bloom_strength=1.0
 VL_amount=1.3
 shadowMapResolution=4096
@@ -6,4 +6,5 @@ raytracedShadows=true
 Lens_Flares=true
 polishedRefl=true
 ao_strength=1.5
+nMap=1
 Godrays=true

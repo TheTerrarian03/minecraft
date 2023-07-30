@@ -1,19 +1,19 @@
-#Sat Jul 29 21:58:51 PDT 2023
-handDepthMul=0.125
+#Sun Jul 30 00:29:14 PDT 2023
+handDepthMul=0.0625
 TexMinFilB=0
 oldLighting=default
 TexMagFilN=0
 tweakBlockDamage=false
 cloudShadow=false
 TexMagFilS=0
-shaderPack=Sildur's+Vibrant+Shaders+v1.50+Lite.zip
+shaderPack=Sildur's+Vibrant+Shaders+v1.50+Extreme-VL.zip
 TexMinFilN=0
 specularMapEnabled=true
 normalMapEnabled=true
-renderResMul=0.8333333
+renderResMul=1.0
 oldHandLight=default
 TexMinFilS=0
-shadowResMul=0.75
+shadowResMul=0.9
 shadowClipFrustrum=true
 TexMagFilB=0
 antialiasingLevel=4
