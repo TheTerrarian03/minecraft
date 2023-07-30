@@ -36,7 +36,7 @@ simulationDistance:18
 entityDistanceScaling:1.0
 guiScale:3
 particles:1
-maxFps:70
+maxFps:40
 graphicsMode:1
 ao:true
 prioritizeChunkUpdates:0
@@ -69,7 +69,7 @@ mainHand:"right"
 attackIndicator:1
 narrator:0
 tutorialStep:none
-mouseWheelSensitivity:0.5011872336272722
+mouseWheelSensitivity:0.4897788193684462
 rawMouseInput:true
 glDebugVerbosity:1
 skipMultiplayerWarning:true

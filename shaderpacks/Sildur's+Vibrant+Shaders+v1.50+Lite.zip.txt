@@ -1,0 +1,7 @@
+#Thu Jul 27 14:40:07 PDT 2023
+shadowMapResolution=1024
+raytracedShadows=true
+Volumetric_Lighting=true
+Lens_Flares=true
+defskybox=true
+Penumbra=true
