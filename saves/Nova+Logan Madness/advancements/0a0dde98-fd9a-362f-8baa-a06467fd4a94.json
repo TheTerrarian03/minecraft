@@ -211,10 +211,12 @@
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
       "minecraft:skeleton": "2023-07-06 13:12:48 -0700",
+      "minecraft:ghast": "2023-07-30 14:42:15 -0700",
       "minecraft:magma_cube": "2023-07-29 16:48:22 -0700",
       "minecraft:spider": "2023-07-14 13:21:29 -0700",
       "minecraft:creeper": "2023-07-06 13:26:32 -0700",
       "minecraft:phantom": "2023-07-20 12:10:35 -0700",
+      "minecraft:zombified_piglin": "2023-07-30 14:27:46 -0700",
       "minecraft:witch": "2023-07-28 11:39:35 -0700",
       "minecraft:ender_dragon": "2023-07-21 11:10:37 -0700",
       "minecraft:enderman": "2023-07-13 13:05:01 -0700",
@@ -1171,6 +1173,7 @@
       "cooked_porkchop": "2023-07-14 12:23:32 -0700",
       "cooked_mutton": "2023-07-20 13:40:00 -0700",
       "cooked_beef": "2023-07-14 12:28:24 -0700",
+      "chorus_fruit": "2023-07-30 11:22:43 -0700",
       "baked_potato": "2023-07-20 14:13:41 -0700",
       "potato": "2023-07-21 16:10:58 -0700",
       "rotten_flesh": "2023-07-28 13:08:32 -0700",
@@ -3031,6 +3034,90 @@
   "minecraft:recipes/decorations/red_bed": {
     "criteria": {
       "has_red_wool": "2023-07-29 17:20:33 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/calibrated_sculk_sensor": {
+    "criteria": {
+      "has_amethyst_shard": "2023-07-30 11:00:28 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/tinted_glass": {
+    "criteria": {
+      "has_amethyst_shard": "2023-07-30 11:00:28 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/spyglass": {
+    "criteria": {
+      "has_amethyst_shard": "2023-07-30 11:00:28 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/amethyst_block": {
+    "criteria": {
+      "has_amethyst_shard": "2023-07-30 11:00:28 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/popped_chorus_fruit": {
+    "criteria": {
+      "has_chorus_fruit": "2023-07-30 11:22:27 -0700"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/froglights": {
+    "criteria": {
+      "froglights": "2023-07-30 14:07:00 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_nugget_from_smelting": {
+    "criteria": {
+      "has_golden_axe": "2023-07-30 13:57:39 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/red_dye_from_beetroot": {
+    "criteria": {
+      "has_beetroot": "2023-07-30 14:15:21 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/beetroot_soup": {
+    "criteria": {
+      "has_beetroot": "2023-07-30 14:15:21 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_ingot_from_nuggets": {
+    "criteria": {
+      "has_gold_nugget": "2023-07-30 14:31:47 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_nugget_from_blasting": {
+    "criteria": {
+      "has_golden_axe": "2023-07-30 13:57:39 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/golden_carrot": {
+    "criteria": {
+      "has_gold_nugget": "2023-07-30 14:31:47 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/black_stained_glass_pane": {
+    "criteria": {
+      "has_glass": "2023-07-30 12:06:02 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/white_stained_glass_pane": {
+    "criteria": {
+      "has_glass": "2023-07-30 12:05:48 -0700"
     },
     "done": true
   },
