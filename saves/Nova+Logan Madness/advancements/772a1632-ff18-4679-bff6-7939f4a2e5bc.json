@@ -535,6 +535,7 @@
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
       "minecraft:pillager": "2023-07-14 13:10:52 -0700",
+      "minecraft:blaze": "2023-08-03 10:22:59 -0700",
       "minecraft:skeleton": "2023-07-13 12:38:21 -0700",
       "minecraft:ghast": "2023-07-30 14:32:41 -0700",
       "minecraft:magma_cube": "2023-07-30 10:48:06 -0700",
@@ -544,6 +545,7 @@
       "minecraft:zombified_piglin": "2023-07-14 13:32:04 -0700",
       "minecraft:witch": "2023-07-27 09:46:53 -0700",
       "minecraft:husk": "2023-07-28 10:00:51 -0700",
+      "minecraft:piglin": "2023-08-03 10:48:07 -0700",
       "minecraft:enderman": "2023-07-20 13:49:43 -0700",
       "minecraft:endermite": "2023-07-21 14:32:56 -0700",
       "minecraft:zombie": "2023-07-13 12:34:11 -0700",
@@ -1642,6 +1644,7 @@
       "potato": "2023-07-30 11:24:20 -0700",
       "cooked_cod": "2023-07-29 14:30:26 -0700",
       "bread": "2023-07-21 14:26:53 -0700",
+      "cooked_salmon": "2023-08-03 12:48:09 -0700",
       "carrot": "2023-07-14 12:53:34 -0700"
     },
     "done": false
@@ -3513,27 +3516,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/light_gray_bed": {
-    "criteria": {
-      "has_light_gray_wool": "2023-07-31 13:45:01 -0700"
-    },
-    "done": true
-  },
   "minecraft:recipes/misc/book": {
     "criteria": {
       "has_paper": "2023-07-31 13:42:13 -0700"
-    },
-    "done": true
-  },
-  "minecraft:husbandry/bred_all_animals": {
-    "criteria": {
-      "minecraft:cow": "2023-07-31 13:51:50 -0700"
-    },
-    "done": false
-  },
-  "minecraft:recipes/decorations/light_gray_banner": {
-    "criteria": {
-      "has_light_gray_wool": "2023-07-31 13:45:01 -0700"
     },
     "done": true
   },
@@ -3543,15 +3528,165 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/light_gray_bed": {
+    "criteria": {
+      "has_light_gray_wool": "2023-07-31 13:45:01 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_gray_banner": {
+    "criteria": {
+      "has_light_gray_wool": "2023-07-31 13:45:01 -0700"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/light_gray_carpet": {
     "criteria": {
       "has_light_gray_wool": "2023-07-31 13:45:01 -0700"
     },
     "done": true
   },
+  "minecraft:husbandry/bred_all_animals": {
+    "criteria": {
+      "minecraft:cow": "2023-07-31 13:51:50 -0700"
+    },
+    "done": false
+  },
   "minecraft:husbandry/breed_an_animal": {
     "criteria": {
       "bred": "2023-07-31 13:51:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/smooth_basalt": {
+    "criteria": {
+      "has_basalt": "2023-08-03 10:19:24 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_basalt_from_basalt_stonecutting": {
+    "criteria": {
+      "has_basalt": "2023-08-03 10:19:24 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_basalt": {
+    "criteria": {
+      "has_basalt": "2023-08-03 10:19:24 -0700"
+    },
+    "done": true
+  },
+  "minecraft:nether/obtain_blaze_rod": {
+    "criteria": {
+      "blaze_rod": "2023-08-03 10:35:29 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/blaze_powder": {
+    "criteria": {
+      "has_blaze_rod": "2023-08-03 10:35:29 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/brewing_stand": {
+    "criteria": {
+      "has_blaze_rod": "2023-08-03 10:35:29 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/observer": {
+    "criteria": {
+      "has_quartz": "2023-08-03 10:46:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/comparator": {
+    "criteria": {
+      "has_quartz": "2023-08-03 10:46:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/diorite": {
+    "criteria": {
+      "has_quartz": "2023-08-03 10:46:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/granite": {
+    "criteria": {
+      "has_quartz": "2023-08-03 10:46:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/quartz_block": {
+    "criteria": {
+      "has_quartz": "2023-08-03 10:46:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/daylight_detector": {
+    "criteria": {
+      "has_quartz": "2023-08-03 10:46:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:nether/obtain_crying_obsidian": {
+    "criteria": {
+      "crying_obsidian": "2023-08-03 10:56:00 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/respawn_anchor": {
+    "criteria": {
+      "has_obsidian": "2023-08-03 10:56:00 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/bookshelf": {
+    "criteria": {
+      "has_book": "2023-08-03 11:07:34 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/lectern": {
+    "criteria": {
+      "has_book": "2023-08-03 11:07:34 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/chiseled_bookshelf": {
+    "criteria": {
+      "has_book": "2023-08-03 11:07:34 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/writable_book": {
+    "criteria": {
+      "has_book": "2023-08-03 11:07:34 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/calibrated_sculk_sensor": {
+    "criteria": {
+      "has_amethyst_shard": "2023-08-03 12:45:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/tinted_glass": {
+    "criteria": {
+      "has_amethyst_shard": "2023-08-03 12:45:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/spyglass": {
+    "criteria": {
+      "has_amethyst_shard": "2023-08-03 12:45:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/amethyst_block": {
+    "criteria": {
+      "has_amethyst_shard": "2023-08-03 12:45:50 -0700"
     },
     "done": true
   },
