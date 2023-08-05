@@ -10,6 +10,7 @@
       "minecraft:old_growth_pine_taiga": "2023-07-28 14:13:42 -0700",
       "minecraft:taiga": "2023-07-14 13:23:18 -0700",
       "minecraft:eroded_badlands": "2023-07-28 10:12:18 -0700",
+      "minecraft:frozen_river": "2023-08-04 14:32:00 -0700",
       "minecraft:birch_forest": "2023-07-21 14:08:54 -0700",
       "minecraft:windswept_hills": "2023-07-28 14:13:13 -0700",
       "minecraft:badlands": "2023-07-28 10:10:05 -0700",
@@ -21,14 +22,18 @@
       "minecraft:river": "2023-07-06 13:55:02 -0700",
       "minecraft:lukewarm_ocean": "2023-07-28 09:53:21 -0700",
       "minecraft:stony_shore": "2023-07-28 10:00:17 -0700",
+      "minecraft:snowy_plains": "2023-08-04 14:34:27 -0700",
+      "minecraft:snowy_taiga": "2023-08-04 14:32:32 -0700",
       "minecraft:swamp": "2023-07-28 09:49:52 -0700",
       "minecraft:cold_ocean": "2023-07-14 13:22:06 -0700",
       "minecraft:forest": "2023-07-06 12:14:56 -0700",
+      "minecraft:frozen_ocean": "2023-08-04 14:30:27 -0700",
       "minecraft:desert": "2023-07-28 09:53:51 -0700",
       "minecraft:windswept_forest": "2023-07-28 09:50:02 -0700",
       "minecraft:ocean": "2023-07-21 14:45:44 -0700",
       "minecraft:jungle": "2023-07-28 10:12:52 -0700",
       "minecraft:old_growth_spruce_taiga": "2023-07-27 09:38:01 -0700",
+      "minecraft:snowy_beach": "2023-08-04 14:30:25 -0700",
       "minecraft:windswept_savanna": "2023-07-21 16:28:16 -0700",
       "minecraft:warm_ocean": "2023-07-28 09:53:39 -0700",
       "minecraft:deep_lukewarm_ocean": "2023-07-28 12:28:42 -0700",
@@ -544,6 +549,7 @@
       "minecraft:phantom": "2023-07-20 12:04:23 -0700",
       "minecraft:zombified_piglin": "2023-07-14 13:32:04 -0700",
       "minecraft:witch": "2023-07-27 09:46:53 -0700",
+      "minecraft:wither_skeleton": "2023-08-04 10:05:57 -0700",
       "minecraft:husk": "2023-07-28 10:00:51 -0700",
       "minecraft:piglin": "2023-08-03 10:48:07 -0700",
       "minecraft:enderman": "2023-07-20 13:49:43 -0700",
@@ -1644,6 +1650,7 @@
       "potato": "2023-07-30 11:24:20 -0700",
       "cooked_cod": "2023-07-29 14:30:26 -0700",
       "bread": "2023-07-21 14:26:53 -0700",
+      "melon_slice": "2023-08-04 09:09:48 -0700",
       "cooked_salmon": "2023-08-03 12:48:09 -0700",
       "carrot": "2023-07-14 12:53:34 -0700"
     },
@@ -3687,6 +3694,60 @@
   "minecraft:recipes/building_blocks/amethyst_block": {
     "criteria": {
       "has_amethyst_shard": "2023-08-03 12:45:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/conduit": {
+    "criteria": {
+      "has_nautilus_core": "2023-08-04 10:00:44 -0700"
+    },
+    "done": true
+  },
+  "minecraft:nether/get_wither_skull": {
+    "criteria": {
+      "wither_skull": "2023-08-04 10:17:46 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/skull_banner_pattern": {
+    "criteria": {
+      "has_wither_skeleton_skull": "2023-08-04 10:17:46 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_salmon_from_smoking": {
+    "criteria": {
+      "has_salmon": "2023-08-04 10:45:30 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_salmon_from_campfire_cooking": {
+    "criteria": {
+      "has_salmon": "2023-08-04 10:45:30 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_salmon": {
+    "criteria": {
+      "has_salmon": "2023-08-04 10:45:30 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/sticky_piston": {
+    "criteria": {
+      "has_slime_ball": "2023-08-04 13:23:59 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/slime_block": {
+    "criteria": {
+      "has_slime_ball": "2023-08-04 13:23:59 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/lead": {
+    "criteria": {
+      "has_slime_ball": "2023-08-04 13:23:59 -0700"
     },
     "done": true
   },
