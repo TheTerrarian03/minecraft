@@ -31,7 +31,7 @@ glintStrength:0.75
 damageTiltStrength:1.0
 highContrast:false
 gamma:1.0
-renderDistance:9
+renderDistance:8
 simulationDistance:9
 entityDistanceScaling:1.0
 guiScale:3
@@ -45,7 +45,7 @@ renderClouds:"fast"
 resourcePacks:["vanilla","file/Faithless1.20.zip"]
 incompatibleResourcePacks:[]
 lastServer:
-lang:en_us
+lang:de_de
 soundDevice:""
 chatVisibility:0
 chatOpacity:1.0
