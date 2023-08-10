@@ -217,6 +217,8 @@
     "criteria": {
       "minecraft:blaze": "2023-08-04 10:12:08 -0700",
       "minecraft:skeleton": "2023-07-06 13:12:48 -0700",
+      "minecraft:zoglin": "2023-08-10 13:31:06 -0700",
+      "minecraft:ravager": "2023-08-10 13:38:50 -0700",
       "minecraft:ghast": "2023-07-30 14:42:15 -0700",
       "minecraft:magma_cube": "2023-07-29 16:48:22 -0700",
       "minecraft:spider": "2023-07-14 13:21:29 -0700",
@@ -1185,6 +1187,7 @@
       "baked_potato": "2023-07-20 14:13:41 -0700",
       "beef": "2023-08-04 09:08:18 -0700",
       "potato": "2023-07-21 16:10:58 -0700",
+      "cooked_cod": "2023-08-10 10:33:43 -0700",
       "rotten_flesh": "2023-07-28 13:08:32 -0700",
       "cooked_chicken": "2023-07-27 13:10:55 -0700",
       "cooked_salmon": "2023-08-03 12:40:50 -0700",
@@ -3909,6 +3912,18 @@
   "minecraft:recipes/building_blocks/cracked_deepslate_tiles": {
     "criteria": {
       "has_deepslate_tiles": "2023-08-04 14:03:11 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone": {
+    "criteria": {
+      "has_redstone_block": "2023-08-10 11:41:08 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/wheat": {
+    "criteria": {
+      "has_hay_block": "2023-08-10 12:12:14 -0700"
     },
     "done": true
   },

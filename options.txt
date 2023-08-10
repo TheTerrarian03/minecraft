@@ -45,7 +45,7 @@ renderClouds:"fast"
 resourcePacks:["vanilla","file/Faithless1.20.zip"]
 incompatibleResourcePacks:[]
 lastServer:
-lang:de_de
+lang:en_us
 soundDevice:""
 chatVisibility:0
 chatOpacity:1.0

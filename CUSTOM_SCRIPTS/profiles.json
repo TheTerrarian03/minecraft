@@ -1,0 +1,24 @@
+{
+    "profiles": {
+      "profile1": {
+        "player_name": "YourUsername",
+        "shader_name": "Sildur's Vibrant Shaders",
+        "resource_pack": "Faithful 32x",
+        "other_options": {
+          "view_distance": 12,
+          "graphics_quality": "high",
+          "particles": "minimal"
+        }
+      },
+      "profile2": {
+        "player_name": "AnotherPlayer",
+        "shader_name": "SEUS Renewed",
+        "resource_pack": "Default",
+        "other_options": {
+          "view_distance": 10,
+          "graphics_quality": "medium",
+          "particles": "all"
+        }
+      }
+    }
+  }
