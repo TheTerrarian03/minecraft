@@ -12,3 +12,8 @@ Plains Village
 
 Acacia Island
 /tp -70 64 3960
+
+An end city
+/tp -5115 117 -312
+
+/give @p minecraft:bow{Enchantments:[{id:punch,lvl:5},{id:punch,lvl:5},{id:power,lvl:5},{id:infinity,lvl:1},{id:looting,lvl:5},{id:flame,lvl:5},{id:mending,lvl:3]}

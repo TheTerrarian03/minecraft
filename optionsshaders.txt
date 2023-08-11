@@ -1,4 +1,4 @@
-#Sat Aug 05 13:32:24 PDT 2023
+#Fri Aug 11 10:57:04 PDT 2023
 handDepthMul=0.0625
 TexMinFilB=0
 oldLighting=default
