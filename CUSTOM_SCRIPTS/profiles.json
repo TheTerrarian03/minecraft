@@ -1,24 +1,32 @@
 {
     "profiles": {
-      "profile1": {
-        "player_name": "YourUsername",
-        "shader_name": "Sildur's Vibrant Shaders",
-        "resource_pack": "Faithful 32x",
-        "other_options": {
-          "view_distance": 12,
-          "graphics_quality": "high",
-          "particles": "minimal"
+        "Nova LAN": {
+            "bat_options": {
+                "disable_wifi": true,
+                "change_name": true,
+                "new_name": "novapants"
+            },
+            "options.txt": {
+                "mouseWheelSensitivity": "0.5",
+                "resourcePacks": "['vanilla', 'file/Faithless1.20.zip']"
+            },
+            "optionsshaders.txt": {
+                "shaderPack": "Sildur's+Vibrant+Shaders+v1.50+Extreme-VL.zip"
+            }
+        },
+        "Logan PC": {
+            "bat_options": {
+                "disable_wifi": false,
+                "change_name": false,
+                "new_name": "LePotato03"
+            },
+            "options.txt": {
+                "mouseWheelSensitivity": "1.0",
+                "resourcePacks": "['vanilla', 'file/Faithless1.20.zip']"
+            },
+            "optionsshaders.txt": {
+                "shaderPack": "Chocapic13_HighPerformance_Toaster.zip"
+            }
         }
-      },
-      "profile2": {
-        "player_name": "AnotherPlayer",
-        "shader_name": "SEUS Renewed",
-        "resource_pack": "Default",
-        "other_options": {
-          "view_distance": 10,
-          "graphics_quality": "medium",
-          "particles": "all"
-        }
-      }
     }
-  }
+}

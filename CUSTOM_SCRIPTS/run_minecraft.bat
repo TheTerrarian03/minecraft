@@ -38,7 +38,7 @@ if not "%1"=="am_admin" (
 set TRUE=1==1
 set FALSE=1==0
 
-set SETTINGS_FILE=%~dp0script_settings.ini
+set SETTINGS_FILE=%~dp0bat_settings.ini
 
 for /f "tokens=1,2 delims==" %%a in (%SETTINGS_FILE%) do (
     : disabling/enabling wifi
