@@ -1,0 +1,13 @@
+[*] - basic graphical ui
+[*] - profile saving
+[*] - profile editing
+[ ] - profile adding
+[ ] - profile removing
+[*] - options.txt editing
+[*] - optionsshaders.txt editing
+[ ] - launcher_accounts.json editing
+[ ] - update bat file
+[ ] - be able to run minecraft (with bat file) from ui
+[ ] - rework code and program structure to use less hard-coded paths and more
+        based on paths passed in by batch file, based off of program location,
+        or path entered manually by user

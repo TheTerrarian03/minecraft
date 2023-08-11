@@ -39,6 +39,20 @@ def write_settings(json_path, profile):
             file.write(options_data)
         
         # optionsshaders
+        optionsshaders_data = ""
+        with open(options_shaders_path, "r") as file:
+            for line in file.readlines():
+                overwritten = False
+                for cust_option, cust_setting in profile_data["optionsshaders.txt"].items():
+                    if line.startswith(cust_option):
+                        optionsshaders_data += str(cust_option) + "=" + str(cust_setting) + "\n"
+                        overwritten = True
+                        break
+                if not overwritten:
+                    optionsshaders_data += line
+        
+        with open(options_shaders_path, "w") as file:
+            file.write(optionsshaders_data)
 
         # launcher_accounts.json
 

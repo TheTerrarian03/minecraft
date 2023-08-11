@@ -4,11 +4,11 @@
             "bat_options": {
                 "disable_wifi": true,
                 "change_name": true,
-                "new_name": "novapants"
+                "new_name": "nova"
             },
             "options.txt": {
                 "mouseWheelSensitivity": "0.5",
-                "resourcePacks": "['vanilla', 'file/Faithless1.20.zip']"
+                "resourcePacks": "['vanilla','file/Faithless1.20.zip']"
             },
             "optionsshaders.txt": {
                 "shaderPack": "Sildur's+Vibrant+Shaders+v1.50+Extreme-VL.zip"

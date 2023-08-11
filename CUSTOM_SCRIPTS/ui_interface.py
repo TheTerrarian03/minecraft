@@ -5,6 +5,14 @@ import ProfileJSONManager
 import write_settings
 
 
+def CLEAN_DATA(data: str):
+    # check for list
+    if data.startswith("[") and data.endswith("]"):
+        data = data.replace("\"","'")
+        data = data.replace(", ", ",")
+    
+    return data
+
 class ComplexInterface:
     def __init__(self, root, profiles_json_path):
         self.root = root
@@ -109,7 +117,7 @@ class ComplexInterface:
         for line in self.options_box.get(0.0,tk.END).split("\n"):
             try:
                 key, value = line.split(":")
-                options_dict[key] = value
+                options_dict[key] = CLEAN_DATA(value)
             except ValueError:
                 print("Error: Invalid custom value in options.txt")
         
