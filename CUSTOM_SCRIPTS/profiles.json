@@ -22,7 +22,7 @@
             },
             "options.txt": {
                 "mouseWheelSensitivity": "1.0",
-                "resourcePacks": "['vanilla', 'file/Faithless1.20.zip']"
+                "resourcePacks": "['vanilla','file/Faithless1.20.zip']"
             },
             "optionsshaders.txt": {
                 "shaderPack": "Chocapic13_HighPerformance_Toaster.zip"
