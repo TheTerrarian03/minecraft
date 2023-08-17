@@ -1652,7 +1652,9 @@
       "apple": "2023-07-21 15:16:37 -0700",
       "potato": "2023-07-30 11:24:20 -0700",
       "cooked_cod": "2023-07-29 14:30:26 -0700",
+      "poisonous_potato": "2023-08-17 14:29:42 -0700",
       "bread": "2023-07-21 14:26:53 -0700",
+      "glow_berries": "2023-08-16 19:17:54 -0700",
       "melon_slice": "2023-08-04 09:09:48 -0700",
       "cooked_salmon": "2023-08-03 12:48:09 -0700",
       "carrot": "2023-07-14 12:53:34 -0700"
@@ -3820,21 +3822,33 @@
     },
     "done": true
   },
-  "minecraft:end/find_end_city": {
-    "criteria": {
-      "in_city": "2023-08-11 10:43:41 -0700"
-    },
-    "done": true
-  },
   "minecraft:end/enter_end_gateway": {
     "criteria": {
       "entered_end_gateway": "2023-08-11 10:37:29 -0700"
     },
     "done": true
   },
+  "minecraft:end/find_end_city": {
+    "criteria": {
+      "in_city": "2023-08-11 10:43:41 -0700"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/shulker_box": {
     "criteria": {
       "has_shulker_shell": "2023-08-11 10:45:08 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/jack_o_lantern": {
+    "criteria": {
+      "has_carved_pumpkin": "2023-08-17 09:42:50 -0700"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/froglights": {
+    "criteria": {
+      "froglights": "2023-08-17 10:09:03 -0700"
     },
     "done": true
   },
