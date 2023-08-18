@@ -3,11 +3,12 @@
     "profiles": {
         "Nova LAN": {
             "bat_options": {
-                "disable_wifi": true,
+                "run_offline": true,
                 "change_name": true,
                 "new_name": "nova"
             },
             "options.txt": {
+                "autoJump": "true",
                 "mouseWheelSensitivity": "0.5",
                 "resourcePacks": "['vanilla','file/Faithless1.20.zip']"
             },
@@ -17,7 +18,7 @@
         },
         "Logan PC": {
             "bat_options": {
-                "disable_wifi": false,
+                "run_offline": false,
                 "change_name": false,
                 "new_name": "LePotato03"
             },

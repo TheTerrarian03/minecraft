@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, simpledialog
 from ProfileJSONManager import ProfileManager, get_default_path_to_json
 
 class ProfileManagerApp:
@@ -49,7 +49,7 @@ class ProfileManagerApp:
     def show_choose_default_frame(self):
         choose_default_frame = self.create_basic_frame("Choose Default Profile", self.show_main_menu_frame)
         
-        profiles = self.get_preset_profiles()  # Replace with your code to get preset profiles
+        profiles = self.get_existing_profiles()  # Replace with your code to get preset profiles
         self.selected_profile = tk.StringVar(value=profiles[0] if profiles else "")
 
         profile_combobox = ttk.Combobox(choose_default_frame, textvariable=self.selected_profile, values=profiles)
@@ -63,13 +63,15 @@ class ProfileManagerApp:
     def show_edit_profiles_frame(self):
         edit_profiles_frame = self.create_basic_frame("Edit Profiles", self.show_main_menu_frame)
         
-        profiles = self.get_preset_profiles()  # Replace with your code to get preset profiles
-        self.selected_edit_profile = tk.StringVar(value=profiles[0] if profiles else "")
+        edit_profiles = self.get_existing_profiles()  # Replace with your code to get preset profiles
+        self.selected_edit_profile = tk.StringVar(value=edit_profiles[0] if edit_profiles else "")
 
-        profile_combobox = ttk.Combobox(edit_profiles_frame, textvariable=self.selected_edit_profile, values=profiles)
+        profile_combobox = ttk.Combobox(edit_profiles_frame, textvariable=self.selected_edit_profile, values=edit_profiles)
         profile_combobox.pack()
 
-        load_profile_button = tk.Button(edit_profiles_frame, text="Load Profile", command=self.load_profile)
+        self.reset_profiles_list = lambda: profile_combobox.config(values=self.get_existing_profiles())
+
+        load_profile_button = tk.Button(edit_profiles_frame, text="Load Profile")  # command set later in function, has to pass in a dict yet to be made
         load_profile_button.pack()
 
         new_profile_button = tk.Button(edit_profiles_frame, text="New Profile", command=self.new_profile)
@@ -80,13 +82,16 @@ class ProfileManagerApp:
 
         ttk.Separator(edit_profiles_frame, orient=tk.HORIZONTAL).pack(fill=tk.X, padx=10, pady=5)
 
-        run_offline_checkbutton = tk.Checkbutton(edit_profiles_frame, text="Run Minecraft Offline?")
+        run_offline_var = tk.BooleanVar()
+        run_offline_checkbutton = tk.Checkbutton(edit_profiles_frame, text="Run Minecraft Offline?", variable=run_offline_var)
         run_offline_checkbutton.pack()
 
-        change_player_name_checkbutton = tk.Checkbutton(edit_profiles_frame, text="Change Player Name?")
+        change_name_var = tk.BooleanVar()
+        change_player_name_checkbutton = tk.Checkbutton(edit_profiles_frame, text="Change Player Name?", variable=change_name_var)
         change_player_name_checkbutton.pack()
 
-        player_name_entry = tk.Entry(edit_profiles_frame)
+        player_name_var = tk.StringVar()
+        player_name_entry = tk.Entry(edit_profiles_frame, textvariable=player_name_var)
         player_name_entry.pack()
 
         options_label = tk.Label(edit_profiles_frame, text="options.txt settings")
@@ -100,6 +105,20 @@ class ProfileManagerApp:
 
         options_shaders_textbox = tk.Text(edit_profiles_frame, width=40, height=4)
         options_shaders_textbox.pack()
+
+        # dictionary of functions to call when retrieving info is necessary
+        customization_dict = {
+            "offline_var": run_offline_var,
+            "change_name_var": change_name_var,
+            "new_name_var": player_name_var,
+            "options_textbox": options_textbox,
+            "optionsshaders_textbox": options_shaders_textbox
+        }
+
+        save_button = tk.Button(edit_profiles_frame, text="Save Profile!", command=lambda: self.save_profile(customization_dict))
+        save_button.pack()
+
+        load_profile_button.config(command=lambda: self.load_profile(customization_dict))
 
         self.show_frame(edit_profiles_frame)
 
@@ -120,7 +139,7 @@ class ProfileManagerApp:
 
     # ----- CHOOSE DEFAULT FRAME FUNCTIONS -----
 
-    def get_preset_profiles(self):
+    def get_existing_profiles(self):
         json_manager = ProfileManager(file_path=get_default_path_to_json())
         return json_manager.get_profile_names()
     
@@ -130,25 +149,97 @@ class ProfileManagerApp:
     
     # ----- EDIT PROFILES FRAME FUNCTIONS -----
 
-    def load_profile(self):
+    def load_profile(self, customization_dict: dict):
         selected_profile = self.selected_edit_profile.get()
         if selected_profile:
-            # Implement your functionality to load the selected profile
             print(f"Loading profile: {selected_profile}")
+            
+            # get profile data from JSON
+            profile_data = ProfileManager(get_default_path_to_json()).get_data_for_profile(selected_profile)
+            bat_options = profile_data["bat_options"]
+
+            # batch file options
+            customization_dict["offline_var"].set(bat_options["run_offline"])
+            customization_dict["change_name_var"].set(bat_options["change_name"])
+            customization_dict["new_name_var"].set(bat_options["new_name"])
+
+            # options.txt custom options
+            options_str = ""
+            for key, value in profile_data["options.txt"].items():
+                new_str = str(key) + ":" + str(value) + "\n"
+                options_str += new_str
+            
+            customization_dict["options_textbox"].delete(0.0,tk.END)
+            customization_dict["options_textbox"].insert(tk.END,options_str)
+
+            # optionsshaders.txt custom options
+            options_shaders_str = ""
+            for key, value in profile_data["optionsshaders.txt"].items():
+                new_str = str(key) + "=" + str(value) + "\n"
+                options_shaders_str += new_str
+            
+            customization_dict["optionsshaders_textbox"].delete(0.0,tk.END)
+            customization_dict["optionsshaders_textbox"].insert(tk.END,options_shaders_str)
         else:
             messagebox.showwarning("Error", "Please select a profile to load.")
 
     def new_profile(self):
-        # Implement your functionality to create a new profile
-        print("Creating a new profile")
+        # Ask for new profile name
+        new_profile_name = simpledialog.askstring("New Profile", "Please enter a name for the new profile:")
+        while not new_profile_name:
+            messagebox.showwarning("New Profile", "Please enter a valid name!")
+            new_profile_name = simpledialog.askstring("New Profile", "Please enter a name for the new profile:")
+
+        # make new JSON profile
+        json_handler = ProfileManager(get_default_path_to_json())
+        json_handler.update_profile(new_profile_name)
+
+        self.selected_edit_profile.set(new_profile_name)
+
+        # usually here I would load the default data for the new profile into the entries, but it would be redundant/silly
+
+        # reload profiles list
+        self.reset_profiles_list()
 
     def remove_profile(self):
         selected_profile = self.selected_edit_profile.get()
         if selected_profile:
-            # Implement your functionality to remove the selected profile
-            print(f"Removing profile: {selected_profile}")
+            is_user_sure = messagebox.askyesno("Remove Profile", f"Are you sure you want to remove {selected_profile}?")
+            if is_user_sure:
+                ProfileManager(get_default_path_to_json()).delete_profile(selected_profile)
+                self.reset_profiles_list()
+                self.selected_edit_profile.set(self.get_existing_profiles()[0])
         else:
             messagebox.showwarning("Error", "Please select a profile to remove.")
+    
+    def save_profile(self, customization_dict: dict):
+        selected_profile = self.selected_edit_profile.get()
+        if selected_profile:
+            # options.txt
+            options_dict = {}
+            for line in customization_dict["options_textbox"].get(0.0,tk.END).split("\n"):
+                try:
+                    key, value = line.split(":")
+                    options_dict[key] = value
+                except ValueError:
+                    print("Error: Invalid custom value in options.txt")
+            
+            # optionsshaders.txt
+            options_shaders_dict = {}
+            for line in customization_dict["optionsshaders_textbox"].get(0.0,tk.END).split("\n"):
+                try:
+                    key, value = line.split("=")
+                    options_shaders_dict[key] = value
+                except ValueError:
+                    print("Error: Invalid custom value in optionsshaders.txt")
+
+            ProfileManager(get_default_path_to_json()).update_profile(selected_profile,
+                                                                      customization_dict["offline_var"].get(),
+                                                                      customization_dict["change_name_var"].get(),
+                                                                      customization_dict["new_name_var"].get(),
+                                                                      options_dict, options_shaders_dict)
+        else:
+            messagebox.showwarning("Error", "Please select a profile to load.")
 
 def main():
     root = tk.Tk()
