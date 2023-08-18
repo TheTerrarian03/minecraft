@@ -33,6 +33,7 @@
 # /launcher_settings.json
 # /launcher_ui_state.json
 /launcher*.json
+/launcher*.bin
 /realms_persistence.json
 /treatment_tags.json
 /updateSourceCache.json
