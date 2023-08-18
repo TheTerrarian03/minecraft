@@ -19,8 +19,32 @@ def write_settings(json_path, profile):
         
         # set some variables for paths
         mc_path = json_path[:json_path.find(".minecraft")+11]
+        acc_path = mc_path + "launcher_accounts.json"
         options_path = mc_path + "options.txt"
         options_shaders_path = mc_path + "optionsshaders.txt"
+
+        # launcher_accounts.json setting
+        # open file
+
+        if profile_data["bat_options"]["change_name"] == True:
+            file = open(acc_path, "r")
+
+            new_acc_data = ""
+            for line in file.readlines():
+                if line.startswith("        \"name\""):
+                    new_line = f"        \"name\" : \"{profile_data['bat_options']['new_name']}\",\n"
+                else:
+                    new_line = line
+
+                new_acc_data += new_line
+
+            file.close()
+
+            # write new data
+
+            file = open(acc_path, "w")
+            file.write(new_acc_data)
+            file.close()
 
         # options.txt setting
         options_data = ""

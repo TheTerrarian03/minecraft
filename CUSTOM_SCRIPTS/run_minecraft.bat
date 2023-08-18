@@ -58,7 +58,8 @@ python -c "import subprocess; subprocess.Popen(['C:\Program Files (x86)\Minecraf
 : run press button
 if %AUTOCLICK% (
     : run python script to look for button to press
-    start /wait python3 %~dp0auto_click_play.py 30
+    python3 %~dp0auto_click_play.py %~dp0 30
+    echo %~dp0
 ) else (
     : pause and ask user to press enter when minecraft played
     cscript //nologo %~dp0send_message.vbs "Please press ENTER or RETURN here once you have pressed the PLAY button."
