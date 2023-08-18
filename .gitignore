@@ -12,6 +12,7 @@
 /defaultconfigs
 /window_settings_launcher.conf
 /window_settings_xal_login.conf
+clientid.txt
 
 # log files
 /crash-reports
