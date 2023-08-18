@@ -1,145 +1,159 @@
 import tkinter as tk
-from tkinter import ttk
-import sys
-import ProfileJSONManager
-import write_settings
+from tkinter import ttk, messagebox
+from ProfileJSONManager import ProfileManager, get_default_path_to_json
 
-
-def CLEAN_DATA(data: str):
-    # check for list
-    if data.startswith("[") and data.endswith("]"):
-        data = data.replace("\"","'")
-        data = data.replace(", ", ",")
-    
-    return data
-
-class ComplexInterface:
-    def __init__(self, root, profiles_json_path):
+class ProfileManagerApp:
+    def __init__(self, root):
         self.root = root
-        self.root.title("Complex Tkinter Interface")
+        self.root.title("Profile Manager")
+
+        self.main_menu_frame = tk.Frame(self.root, relief=tk.RAISED, borderwidth=2)
+        self.main_menu_frame.pack(padx=20, pady=20)
+
+        self.create_main_menu_buttons()
+
+        self.current_frame = self.main_menu_frame  # Set main menu as current frame
+
+    def create_main_menu_buttons(self):
+        button_labels = [
+            ("Choose default profile", self.show_choose_default_frame),
+            ("Edit Profiles", self.show_edit_profiles_frame),
+            ("Write profile", self.show_write_profile_frame),
+            ("Run Minecraft", self.show_run_minecraft_frame),
+            ("Manage Program Dependencies", self.show_manage_dependencies_frame),
+            ("Exit Program", self.root.quit)  # Add exit button
+        ]
+
+        for label, command in button_labels:
+            button = tk.Button(self.main_menu_frame, text=label, command=command)
+            button.pack(fill=tk.X, padx=10, pady=5)
+
+    def show_frame(self, frame_to_show):
+        if hasattr(self, 'current_frame'):
+            self.current_frame.pack_forget()
+
+        self.current_frame = frame_to_show
+        self.current_frame.pack(padx=20, pady=20)
+
+    def create_basic_frame(self, title, return_to_menu_func):
+        frame = tk.Frame(self.root, relief=tk.RAISED, borderwidth=2)
+
+        label = tk.Label(frame, text=title)
+        label.pack(side=tk.TOP)  # Pack label at the top of the frame
+
+        exit_button = tk.Button(frame, text="Exit", command=return_to_menu_func)
+        exit_button.pack(side=tk.BOTTOM)  # Pack exit button at the bottom of the frame
+
+        return frame
+
+    def show_choose_default_frame(self):
+        choose_default_frame = self.create_basic_frame("Choose Default Profile", self.show_main_menu_frame)
         
-        # Top Frame
-        top_frame = tk.Frame(root)
-        top_frame.pack(fill="both", expand=True)
+        profiles = self.get_preset_profiles()  # Replace with your code to get preset profiles
+        self.selected_profile = tk.StringVar(value=profiles[0] if profiles else "")
+
+        profile_combobox = ttk.Combobox(choose_default_frame, textvariable=self.selected_profile, values=profiles)
+        profile_combobox.pack()
+
+        set_default_button = tk.Button(choose_default_frame, text="Set Default", command=lambda: self.set_default_profile(profile_combobox.get()))
+        set_default_button.pack()
+
+        self.show_frame(choose_default_frame)
+
+    def show_edit_profiles_frame(self):
+        edit_profiles_frame = self.create_basic_frame("Edit Profiles", self.show_main_menu_frame)
         
-        # Profile Choose Side
-        profile_choose_frame = tk.Frame(top_frame)
-        profile_choose_frame.pack(side="left", padx=10, pady=10, fill="y")
-        
-        tk.Label(profile_choose_frame, text="Profile", font=("Helvetica", 16, "bold")).pack(anchor="w")
-        
-        self.json_handler = ProfileJSONManager.ProfileManager(profiles_json_path)
-        profile_names = self.json_handler.get_profile_names()
-        
-        self.profile_var = tk.StringVar()
-        self.profile_var.set(profile_names[0])
+        profiles = self.get_preset_profiles()  # Replace with your code to get preset profiles
+        self.selected_edit_profile = tk.StringVar(value=profiles[0] if profiles else "")
 
-        ttk.Combobox(profile_choose_frame, textvariable=self.profile_var, values=profile_names).pack(fill="x")
-                
-        # Profile Settings Side
-        profile_settings_frame = tk.Frame(top_frame)
-        profile_settings_frame.pack(side="left", padx=10, pady=10, fill="both", expand=True)
-        
-        tk.Label(profile_settings_frame, text="Profile Settings", font=("Helvetica", 16, "bold")).pack(anchor="w")
+        profile_combobox = ttk.Combobox(edit_profiles_frame, textvariable=self.selected_edit_profile, values=profiles)
+        profile_combobox.pack()
 
-        tk.Button(profile_choose_frame, text="Load Profile", command=self.load_profile).pack(padx=10)
-        tk.Button(profile_choose_frame, text="Remove Profile", command=self.remove_profile).pack(padx=10)
-        tk.Button(profile_choose_frame, text="Add Profile", command=self.add_profile).pack(padx=10)
-        
-        self.disable_wifi_var = tk.BooleanVar()
-        self.change_name_var = tk.BooleanVar()
-        self.new_name_var = tk.StringVar()
+        load_profile_button = tk.Button(edit_profiles_frame, text="Load Profile", command=self.load_profile)
+        load_profile_button.pack()
 
-        tk.Checkbutton(profile_settings_frame, text="Disable/Enable WiFi", variable=self.disable_wifi_var).pack(anchor="w")
-        tk.Checkbutton(profile_settings_frame, text="Change Player Name", variable=self.change_name_var).pack(anchor="w")
-        tk.Entry(profile_settings_frame, textvariable=self.new_name_var).pack(fill="x", pady=5)
-        
-        tk.Button(profile_settings_frame, text="Save Profile!", command=self.save_profile).pack(padx=10)
-        tk.Button(profile_settings_frame, text="Write Settings!", command=self.write_settings).pack(padx=10)
+        new_profile_button = tk.Button(edit_profiles_frame, text="New Profile", command=self.new_profile)
+        new_profile_button.pack()
 
-        # Minecraft Settings Side
+        remove_profile_button = tk.Button(edit_profiles_frame, text="Remove Profile", command=self.remove_profile)
+        remove_profile_button.pack()
 
-        minecraft_settings_frame = tk.Frame(top_frame)
-        minecraft_settings_frame.pack(side="right", padx=10, pady=10, fill="both", expand=True)
+        ttk.Separator(edit_profiles_frame, orient=tk.HORIZONTAL).pack(fill=tk.X, padx=10, pady=5)
 
-        tk.Label(minecraft_settings_frame, text="Minecraft Settings", font=("Helvetica", 16, "bold")).pack(anchor="w")
+        run_offline_checkbutton = tk.Checkbutton(edit_profiles_frame, text="Run Minecraft Offline?")
+        run_offline_checkbutton.pack()
 
-        tk.Label(minecraft_settings_frame, text="options.txt custom options").pack()
+        change_player_name_checkbutton = tk.Checkbutton(edit_profiles_frame, text="Change Player Name?")
+        change_player_name_checkbutton.pack()
 
-        self.options_box = tk.Text(minecraft_settings_frame, )
-        self.options_box.pack(padx=10, pady=10, fill="both", expand=True)
-        
-        tk.Label(minecraft_settings_frame, text="optionsshaders.txt custom options").pack()
+        player_name_entry = tk.Entry(edit_profiles_frame)
+        player_name_entry.pack()
 
-        self.options_shaders_box = tk.Text(minecraft_settings_frame, wrap=tk.WORD)
-        self.options_shaders_box.pack(padx=10, pady=10, fill="both", expand=True)
+        options_label = tk.Label(edit_profiles_frame, text="options.txt settings")
+        options_label.pack()
 
-        # load first profile
-        self.load_profile()
+        options_textbox = tk.Text(edit_profiles_frame, width=40, height=4)
+        options_textbox.pack()
+
+        options_shaders_label = tk.Label(edit_profiles_frame, text="optionsshaders.txt settings")
+        options_shaders_label.pack()
+
+        options_shaders_textbox = tk.Text(edit_profiles_frame, width=40, height=4)
+        options_shaders_textbox.pack()
+
+        self.show_frame(edit_profiles_frame)
+
+    def show_write_profile_frame(self):
+        write_profile_frame = self.create_basic_frame("Write Profile", self.show_main_menu_frame)
+        self.show_frame(write_profile_frame)
+
+    def show_run_minecraft_frame(self):
+        run_minecraft_frame = self.create_basic_frame("Run Minecraft", self.show_main_menu_frame)
+        self.show_frame(run_minecraft_frame)
+
+    def show_manage_dependencies_frame(self):
+        manage_dependencies_frame = self.create_basic_frame("Manage Program Dependencies", self.show_main_menu_frame)
+        self.show_frame(manage_dependencies_frame)
+
+    def show_main_menu_frame(self):
+        self.show_frame(self.main_menu_frame)
+
+    # ----- CHOOSE DEFAULT FRAME FUNCTIONS -----
+
+    def get_preset_profiles(self):
+        json_manager = ProfileManager(file_path=get_default_path_to_json())
+        return json_manager.get_profile_names()
+    
+    def set_default_profile(self, profile_name):
+        json_manager = ProfileManager(file_path=get_default_path_to_json())
+        json_manager.set_default_profile(profile_name)
+    
+    # ----- EDIT PROFILES FRAME FUNCTIONS -----
 
     def load_profile(self):
-        # load and get data
-        profile_data = self.json_handler.get_data_for_profile(self.profile_var.get())
-        bat_options = profile_data["bat_options"]
+        selected_profile = self.selected_edit_profile.get()
+        if selected_profile:
+            # Implement your functionality to load the selected profile
+            print(f"Loading profile: {selected_profile}")
+        else:
+            messagebox.showwarning("Error", "Please select a profile to load.")
 
-        # batch file options
-        self.disable_wifi_var.set(bat_options["disable_wifi"])
-        self.change_name_var.set(bat_options["change_name"])
-        self.new_name_var.set(bat_options["new_name"])
-
-        # options.txt custom options
-        options_str = ""
-        for key, value in profile_data["options.txt"].items():
-            new_str = str(key) + ":" + str(value) + "\n"
-            options_str += new_str
-        
-        self.options_box.delete(0.0,tk.END)
-        self.options_box.insert(tk.END,options_str)
-
-        # optionsshaders.txt custom options
-        options_shaders_str = ""
-        for key, value in profile_data["optionsshaders.txt"].items():
-            new_str = str(key) + "=" + str(value) + "\n"
-            options_shaders_str += new_str
-        
-        self.options_shaders_box.delete(0.0,tk.END)
-        self.options_shaders_box.insert(tk.END,options_shaders_str)
+    def new_profile(self):
+        # Implement your functionality to create a new profile
+        print("Creating a new profile")
 
     def remove_profile(self):
-        print("removing profile")
-    
-    def add_profile(self):
-        print("adding profile")
-    
-    def save_profile(self):
-        # options.txt
-        options_dict = {}
-        for line in self.options_box.get(0.0,tk.END).split("\n"):
-            try:
-                key, value = line.split(":")
-                options_dict[key] = CLEAN_DATA(value)
-            except ValueError:
-                print("Error: Invalid custom value in options.txt")
-        
-        options_shaders_dict = {}
-        for line in self.options_shaders_box.get(0.0,tk.END).split("\n"):
-            try:
-                key, value = line.split("=")
-                options_shaders_dict[key] = value
-            except ValueError:
-                print("Error: Invalid custom value in optionsshaders.txt")
+        selected_profile = self.selected_edit_profile.get()
+        if selected_profile:
+            # Implement your functionality to remove the selected profile
+            print(f"Removing profile: {selected_profile}")
+        else:
+            messagebox.showwarning("Error", "Please select a profile to remove.")
 
-        self.json_handler.update_profile(self.profile_var.get(), self.disable_wifi_var.get(), self.change_name_var.get(), self.new_name_var.get(), options_dict, options_shaders_dict)
-    
-    def write_settings(self):
-        write_settings.write_settings(PROFILES_JSON_PATH, self.profile_var.get())
+def main():
+    root = tk.Tk()
+    app = ProfileManagerApp(root)
+    root.mainloop()
 
 if __name__ == "__main__":
-    try:
-        PROFILES_JSON_PATH = sys.argv[1]
-    except IndexError:
-        PROFILES_JSON_PATH = ProfileJSONManager.get_default_path_to_json()
-
-    root = tk.Tk()
-    app = ComplexInterface(root, PROFILES_JSON_PATH)
-    root.mainloop()
+    main()

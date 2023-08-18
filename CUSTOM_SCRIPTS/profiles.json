@@ -1,4 +1,5 @@
 {
+    "default_profile": "Nova LAN",
     "profiles": {
         "Nova LAN": {
             "bat_options": {

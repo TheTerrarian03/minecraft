@@ -59,6 +59,26 @@ class ProfileManager:
             del self.data["profiles"][profile_name]
             self.save_changes()
 
+    def set_default_profile(self, profile_name, first_profile_on_error=True):
+        profile_exists = False
+
+        for profile in self.get_profile_names():
+            if profile == profile_name:
+                profile_exists = True
+                break
+        
+        if not profile_exists:
+            profile_name = self.get_profile_names()[0]
+
+        self.data["default_profile"] = profile_name
+        self.save_changes()
+
+    def get_default_profile_name(self):
+        return self.data["default_profile"]
+
+    def get_default_profile_data(self):
+        return self.data["profiles"][self.get_default_profile_name()]
+
     def get_profile_names(self):
         names = []
         for profile_name in self.data["profiles"]:
@@ -70,3 +90,8 @@ class ProfileManager:
             return self.data["profiles"][profile_name]
         except:
             return {}
+
+# if __name__ == "__main__":
+#     manager = ProfileManager("profiles.json")
+#     manager.set_default_profile("Nova LAN")
+#     print(manager.get_default_profile_name())
