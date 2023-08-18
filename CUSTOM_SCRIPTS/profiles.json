@@ -3,24 +3,20 @@
     "profiles": {
         "Nova LAN": {
             "bat_options": {
-                "run_offline": true,
+                "run_offline": false,
                 "change_name": true,
-                "new_name": "nova"
+                "new_name": "nova",
+                "auto_click_play": false
             },
-            "options.txt": {
-                "autoJump": "true",
-                "mouseWheelSensitivity": "0.5",
-                "resourcePacks": "['vanilla','file/Faithless1.20.zip']"
-            },
-            "optionsshaders.txt": {
-                "shaderPack": "Sildur's+Vibrant+Shaders+v1.50+Extreme-VL.zip"
-            }
+            "options.txt": {},
+            "optionsshaders.txt": {}
         },
         "Logan PC": {
             "bat_options": {
                 "run_offline": false,
                 "change_name": false,
-                "new_name": "LePotato03"
+                "new_name": "LePotato03",
+                "auto_click_play": false
             },
             "options.txt": {
                 "mouseWheelSensitivity": "1.0",

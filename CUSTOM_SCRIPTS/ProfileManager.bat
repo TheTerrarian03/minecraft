@@ -13,6 +13,9 @@ if %errorlevel% neq 0 (
     cscript //nologo send_message.vbs "Please re-run this program once Python has been successfully installed. Thanks!"
 ) else (
     echo Python 3 is already installed on this system.
+    echo Running ui
+
+    python3 ui_interface.py
 )
 
 endlocal

@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
 from ProfileJSONManager import ProfileManager, get_default_path_to_json
+from write_settings import write_settings
 
 class ProfileManagerApp:
     def __init__(self, root):
@@ -18,8 +19,8 @@ class ProfileManagerApp:
         button_labels = [
             ("Choose default profile", self.show_choose_default_frame),
             ("Edit Profiles", self.show_edit_profiles_frame),
-            ("Write profile", self.show_write_profile_frame),
-            ("Run Minecraft", self.show_run_minecraft_frame),
+            ("Write profile", self.write_profile),
+            ("Run Minecraft", self.run_minecraft),
             ("Manage Program Dependencies", self.show_manage_dependencies_frame),
             ("Exit Program", self.root.quit)  # Add exit button
         ]
@@ -94,6 +95,10 @@ class ProfileManagerApp:
         player_name_entry = tk.Entry(edit_profiles_frame, textvariable=player_name_var)
         player_name_entry.pack()
 
+        auto_click_var = tk.BooleanVar()
+        auto_click_play_checkbutton = tk.Checkbutton(edit_profiles_frame, text="Auto Click Play?", variable=auto_click_var)
+        auto_click_play_checkbutton.pack()
+
         options_label = tk.Label(edit_profiles_frame, text="options.txt settings")
         options_label.pack()
 
@@ -111,6 +116,7 @@ class ProfileManagerApp:
             "offline_var": run_offline_var,
             "change_name_var": change_name_var,
             "new_name_var": player_name_var,
+            "auto_click_var": auto_click_var,
             "options_textbox": options_textbox,
             "optionsshaders_textbox": options_shaders_textbox
         }
@@ -122,11 +128,13 @@ class ProfileManagerApp:
 
         self.show_frame(edit_profiles_frame)
 
-    def show_write_profile_frame(self):
-        write_profile_frame = self.create_basic_frame("Write Profile", self.show_main_menu_frame)
-        self.show_frame(write_profile_frame)
+    def write_profile(self):
+        profile_name = ProfileManager(file_path=get_default_path_to_json()).get_default_profile_name()
+        print(f"Attempting to write settings for profile {profile_name}...")
+        write_settings(get_default_path_to_json(), profile_name)
+        print(f"...Done!")
 
-    def show_run_minecraft_frame(self):
+    def run_minecraft(self):
         run_minecraft_frame = self.create_basic_frame("Run Minecraft", self.show_main_menu_frame)
         self.show_frame(run_minecraft_frame)
 
@@ -146,6 +154,7 @@ class ProfileManagerApp:
     def set_default_profile(self, profile_name):
         json_manager = ProfileManager(file_path=get_default_path_to_json())
         json_manager.set_default_profile(profile_name)
+        print(f"Set default profile to: {profile_name}")
     
     # ----- EDIT PROFILES FRAME FUNCTIONS -----
 
@@ -162,6 +171,7 @@ class ProfileManagerApp:
             customization_dict["offline_var"].set(bat_options["run_offline"])
             customization_dict["change_name_var"].set(bat_options["change_name"])
             customization_dict["new_name_var"].set(bat_options["new_name"])
+            customization_dict["auto_click_var"].set(bat_options["auto_click_play"])
 
             # options.txt custom options
             options_str = ""
@@ -201,6 +211,8 @@ class ProfileManagerApp:
         # reload profiles list
         self.reset_profiles_list()
 
+        print(f"Created new profile: {new_profile_name}")
+
     def remove_profile(self):
         selected_profile = self.selected_edit_profile.get()
         if selected_profile:
@@ -209,11 +221,13 @@ class ProfileManagerApp:
                 ProfileManager(get_default_path_to_json()).delete_profile(selected_profile)
                 self.reset_profiles_list()
                 self.selected_edit_profile.set(self.get_existing_profiles()[0])
+                print(f"Removed profile: {selected_profile}")
         else:
             messagebox.showwarning("Error", "Please select a profile to remove.")
     
     def save_profile(self, customization_dict: dict):
         selected_profile = self.selected_edit_profile.get()
+        print(f"Saving profile {selected_profile}...")
         if selected_profile:
             # options.txt
             options_dict = {}
@@ -222,7 +236,7 @@ class ProfileManagerApp:
                     key, value = line.split(":")
                     options_dict[key] = value
                 except ValueError:
-                    print("Error: Invalid custom value in options.txt")
+                    print("Error (non-critical): Invalid custom value in options.txt")
             
             # optionsshaders.txt
             options_shaders_dict = {}
@@ -231,13 +245,16 @@ class ProfileManagerApp:
                     key, value = line.split("=")
                     options_shaders_dict[key] = value
                 except ValueError:
-                    print("Error: Invalid custom value in optionsshaders.txt")
+                    print("Error (non-critical): Invalid custom value in optionsshaders.txt")
 
             ProfileManager(get_default_path_to_json()).update_profile(selected_profile,
                                                                       customization_dict["offline_var"].get(),
                                                                       customization_dict["change_name_var"].get(),
                                                                       customization_dict["new_name_var"].get(),
+                                                                      customization_dict["auto_click_var"].get(),
                                                                       options_dict, options_shaders_dict)
+
+            print("...Success!")
         else:
             messagebox.showwarning("Error", "Please select a profile to load.")
 

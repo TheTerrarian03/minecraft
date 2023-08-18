@@ -9,56 +9,62 @@
 : made by Logan on 08102023
 
 @echo off
-title auto-run minecraft!
-
-echo asking for admin access
-if not "%1"=="am_admin" (
-    powershell -Command "Start-Process -Verb RunAs -FilePath '%0' -ArgumentList 'am_admin'"
-    exit /b
-)
-
-: echo disabling wifi
-: netsh interface set interface "Wi-Fi" Disable
-: 
-: echo wifi disabled
-: echo renaming account to "nova"
-: python %~dp0change_name.py
-: 
-: echo done, starting minecraft
-: start "" "C:\Program Files (x86)\Minecraft Launcher\MinecraftLauncher.exe"
-: 
-: pause
-: netsh interface set interface "Wi-Fi" Enable
-
-: set location=Bob
-: echo %location%
-: echo "We're working with %location%"
-: pause
+@REM title auto-run minecraft!
 
 set TRUE=1==1
 set FALSE=1==0
 
+: write settings for profile
+start /wait python3 %~dp0write_settings.py
+
+: assign settings file
 set SETTINGS_FILE=%~dp0bat_settings.ini
 
+: getting bat settings
 for /f "tokens=1,2 delims==" %%a in (%SETTINGS_FILE%) do (
     : disabling/enabling wifi
-    if %%a==disableAndEnableWifi if %%b==True set TOGGLEWIFI=%TRUE%
-    if %%a==disableAndEnableWifi if %%b==False set TOGGLEWIFI=%FALSE%
+    if %%a==run_offline if %%b==True set OFFLINE=%TRUE%
+    if %%a==run_offline if %%b==False set OFFLINE=%FALSE%
 
     : setting name
-    if %%a==setName if %%b==True set SETNAME=%TRUE%
-    if %%a==setName if %%b==False set SETNAME=%FALSE%
+    if %%a==change_name if %%b==True set SETNAME=%TRUE%
+    if %%a==change_name if %%b==False set SETNAME=%FALSE%
 
     : new name
-    if %%a==newName set NEWNAME=%%b
+    if %%a==new_name set NEWNAME=%%b
 
-    : banana
-    if %%a
+    : auto click play button
+    if %%a==auto_click_play if %%b==True set AUTOCLICK=%TRUE%
+    if %%a==auto_click_play if %%b==False set AUTOCLICK=%FALSE%
 )
 
-if %toggleWifi% (
-    echo success
+: if working with wifi, ask for admin access
+if %OFFLINE% (
+        if not "%1"=="am_admin" (
+        powershell -Command "Start-Process -Verb RunAs -FilePath '%0' -ArgumentList 'am_admin'"
+        exit /b
+    )
 )
 
-echo %toggleWifi%
-pause
+: now, disable wifi if needed
+if %OFFLINE% (
+    netsh interface set interface "Wi-Fi" Disable
+    netsh interface set interface "Ethernet" Disable
+)
+
+: run minecraft
+python -c "import subprocess; subprocess.Popen(['C:\Program Files (x86)\Minecraft Launcher\MinecraftLauncher.exe'])"
+
+: run press button
+if %AUTOCLICK% (
+    : run python script to look for button to press
+    start /wait python3 %~dp0auto_click_play.py 30
+) else (
+    : pause and ask user to press enter when minecraft played
+    cscript //nologo %~dp0send_message.vbs "Please press ENTER or RETURN here once you have pressed the PLAY button."
+)
+
+if %OFFLINE% (
+    netsh interface set interface "Wi-Fi" Enable
+    netsh interface set interface "Ethernet" Enable
+)

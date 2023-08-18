@@ -22,13 +22,14 @@ class ProfileManager:
         with open(self.file_path, 'w') as file:
             json.dump(self.data, file, indent=4)
 
-    def update_profile(self, profile_name, bat_wifi: bool=False, bat_change_name: bool=False, bat_new_name: str="", optionstxt={}, optionsshaderstxt={}):
+    def update_profile(self, profile_name, bat_wifi: bool=False, bat_change_name: bool=False, bat_new_name: str="", bat_auto_click: bool=False, optionstxt={}, optionsshaderstxt={}):
         profile = self.data["profiles"].get(profile_name, {})
         
         bat_options = {
             "run_offline": bat_wifi,
             "change_name": bat_change_name,
-            "new_name": bat_new_name
+            "new_name": bat_new_name,
+            "auto_click_play": bat_auto_click
         }
 
         profile["bat_options"] = bat_options

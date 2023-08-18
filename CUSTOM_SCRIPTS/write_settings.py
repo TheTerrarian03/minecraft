@@ -65,6 +65,8 @@ if __name__ == "__main__":
         PROFILE_NAME = sys.argv[2]
     except IndexError:
         PROFILES_JSON_PATH = ProfileJSONManager.get_default_path_to_json()
-        PROFILE_NAME = None
+        PROFILE_NAME = ProfileJSONManager.ProfileManager(PROFILES_JSON_PATH).get_default_profile_name()
+
+        print(PROFILES_JSON_PATH, PROFILE_NAME)
 
     write_settings(PROFILES_JSON_PATH, PROFILE_NAME)
