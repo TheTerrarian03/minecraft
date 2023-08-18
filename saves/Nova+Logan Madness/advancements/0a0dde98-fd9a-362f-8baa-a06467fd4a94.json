@@ -1189,7 +1189,9 @@
       "beef": "2023-08-04 09:08:18 -0700",
       "potato": "2023-07-21 16:10:58 -0700",
       "cooked_cod": "2023-08-10 10:33:43 -0700",
+      "golden_apple": "2023-08-18 09:14:20 -0700",
       "rotten_flesh": "2023-07-28 13:08:32 -0700",
+      "glow_berries": "2023-08-18 09:02:13 -0700",
       "cooked_chicken": "2023-07-27 13:10:55 -0700",
       "cooked_salmon": "2023-08-03 12:40:50 -0700",
       "carrot": "2023-07-20 12:37:22 -0700"
@@ -4213,6 +4215,24 @@
   "minecraft:recipes/building_blocks/jack_o_lantern": {
     "criteria": {
       "has_carved_pumpkin": "2023-08-17 09:43:17 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/quartz": {
+    "criteria": {
+      "has_nether_quartz_ore": "2023-08-18 09:46:17 -0700"
+    },
+    "done": true
+  },
+  "minecraft:story/enchant_item": {
+    "criteria": {
+      "enchanted_item": "2023-08-18 09:28:20 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/quartz_from_blasting": {
+    "criteria": {
+      "has_nether_quartz_ore": "2023-08-18 09:46:17 -0700"
     },
     "done": true
   },
