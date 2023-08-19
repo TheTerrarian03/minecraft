@@ -1,5 +1,6 @@
 import sys
 import ProfileJSONManager
+import json
 
 
 def write_settings(json_path, profile):
@@ -27,24 +28,14 @@ def write_settings(json_path, profile):
         # open file
 
         if profile_data["bat_options"]["change_name"] == True:
-            file = open(acc_path, "r")
+            data = json.load(acc_path)
+            print(data)
 
-            new_acc_data = ""
-            for line in file.readlines():
-                if line.startswith("        \"name\""):
-                    new_line = f"        \"name\" : \"{profile_data['bat_options']['new_name']}\",\n"
-                else:
-                    new_line = line
+            data["accounts"][0]["minecraftProfile"]["name"] = "banana"  # profile_data['bat_options']['new_name']
+            print(data)
 
-                new_acc_data += new_line
-
-            file.close()
-
-            # write new data
-
-            file = open(acc_path, "w")
-            file.write(new_acc_data)
-            file.close()
+            json.dump(data, acc_path, indent=2)
+            input()
 
         # options.txt setting
         options_data = ""

@@ -1,5 +1,5 @@
 {
-    "default_profile": "Nova LAN",
+    "default_profile": "Tester",
     "profiles": {
         "Nova LAN": {
             "bat_options": {
@@ -54,6 +54,16 @@
             "optionsshaders.txt": {
                 "shaderPack": "Chocapic13_HighPerformance_Toaster.zip"
             }
+        },
+        "Tester": {
+            "bat_options": {
+                "run_offline": false,
+                "change_name": true,
+                "new_name": "loganos",
+                "auto_click_play": false
+            },
+            "options.txt": {},
+            "optionsshaders.txt": {}
         }
     }
 }
