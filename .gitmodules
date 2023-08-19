@@ -1,0 +1,3 @@
+[submodule "MinecraftProfileManager"]
+	path = MinecraftProfileManager
+	url = https://github.com/TheTerrarian03/MinecraftProfileManager
