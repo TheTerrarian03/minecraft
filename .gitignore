@@ -60,3 +60,6 @@ clientid.txt
 # saves folder
 # /saves/*
 # !/saves/Nova+Logan Madness
+
+# Custom scripts folder
+/CUSTOM_SCRIPTS*
