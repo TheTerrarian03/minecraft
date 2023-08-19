@@ -11,11 +11,10 @@ if %errorlevel% neq 0 (
     cscript //nologo ask_install_python.vbs "Python 3 is not installed on this system, and is required. Do you want the link to install Python to be opened for you?"
 
     cscript //nologo send_message.vbs "Please re-run this program once Python has been successfully installed. Thanks!"
-) else (
-    echo Python 3 is already installed on this system.
-    echo Running ui
 
-    python3 ui_interface.py
+    exit
 )
+
+..\PythonFiles\ui_interface.py
 
 endlocal

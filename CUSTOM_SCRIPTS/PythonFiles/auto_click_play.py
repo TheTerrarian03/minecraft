@@ -36,10 +36,11 @@ def main(image_paths):
     return True
 
 if __name__ == '__main__':
+    # play button images path
     try:
         CWD = sys.argv[1]
     except IndexError:
-        CWD = "C:\\Users\\thete\\AppData\\Roaming\\.minecraft\\CUSTOM_SCRIPTS\\"
+        CWD = "C:\\Users\\thete\\AppData\\Roaming\\.minecraft\\CUSTOM_SCRIPTS\\mc_play_buttons\\"
     
     try:
         MAX_TIME = int(sys.argv[2])
@@ -49,7 +50,7 @@ if __name__ == '__main__':
     print(MAX_TIME, CWD)
 
     # get image paths, saves exec time
-    image_paths = get_button_image_paths(CWD+"\mc_play_buttons")
+    image_paths = get_button_image_paths(CWD)
     
     # Record the start time
     start_time = time.time()

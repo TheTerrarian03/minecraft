@@ -1,4 +1,6 @@
-[*] - basic graphical ui
+PROGRAM FUNCTIONALITY
+[ ] - graphical ui
+[ ] - default profile setting
 [*] - profile saving
 [*] - profile editing
 [ ] - profile adding
@@ -6,8 +8,10 @@
 [*] - options.txt editing
 [*] - optionsshaders.txt editing
 [ ] - launcher_accounts.json editing
-[ ] - update bat file
-[ ] - be able to run minecraft (with bat file) from ui
-[ ] - rework code and program structure to use less hard-coded paths and more
-        based on paths passed in by batch file, based off of program location,
-        or path entered manually by user
+[ ] - python dependencies window
+[ ] - (maybe) a window for custom path setting, for minecraft launcher, options.txt loc, etc
+
+OS COMPATABILITY
+[ ] - Windows (with .bat files)
+[ ] - MacOS (with _ files)
+[ ] - Linux (with _ files)
