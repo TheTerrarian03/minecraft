@@ -1656,6 +1656,7 @@
       "bread": "2023-07-21 14:26:53 -0700",
       "glow_berries": "2023-08-16 19:17:54 -0700",
       "melon_slice": "2023-08-04 09:09:48 -0700",
+      "golden_carrot": "2023-08-25 09:49:00 -0700",
       "cooked_salmon": "2023-08-03 12:48:09 -0700",
       "carrot": "2023-07-14 12:53:34 -0700"
     },
@@ -3939,6 +3940,12 @@
   "minecraft:recipes/food/cooked_mutton_from_campfire_cooking": {
     "criteria": {
       "has_mutton": "2023-08-24 14:35:54 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/black_dye": {
+    "criteria": {
+      "has_ink_sac": "2023-08-25 12:39:17 -0700"
     },
     "done": true
   },
