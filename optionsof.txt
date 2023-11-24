@@ -68,4 +68,4 @@ ofChatBackground:0
 ofChatShadow:true
 ofTelemetry:0
 ofHeldItemTooltips:true
-key_of.key.zoom:key.keyboard.t
+key_of.key.zoom:key.mouse.4
