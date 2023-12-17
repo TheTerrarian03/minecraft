@@ -63,7 +63,7 @@ ofCustomEntityModels:true
 ofCustomGuis:true
 ofShowGlErrors:true
 ofFastMath:true
-ofFastRender:true
+ofFastRender:false
 ofChatBackground:0
 ofChatShadow:true
 ofTelemetry:0
