@@ -43,7 +43,7 @@ prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:"fast"
 resourcePacks:["vanilla","file/Faithless1.20.zip"]
-incompatibleResourcePacks:["file/Faithless1.20.zip"]
+incompatibleResourcePacks:[]
 lastServer:
 lang:en_us
 soundDevice:""
