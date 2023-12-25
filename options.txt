@@ -34,7 +34,7 @@ gamma:1.0
 renderDistance:12
 simulationDistance:10
 entityDistanceScaling:1.0
-guiScale:5
+guiScale:3
 particles:0
 maxFps:260
 graphicsMode:1
@@ -42,8 +42,8 @@ ao:true
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:"fast"
-resourcePacks:["vanilla","file/Faithless1.20.zip"]
-incompatibleResourcePacks:[]
+resourcePacks:["vanilla","file/Faithless1.20"]
+incompatibleResourcePacks:["file/Faithless1.20"]
 lastServer:
 lang:en_us
 soundDevice:""
@@ -136,4 +136,4 @@ modelPart_right_sleeve:true
 modelPart_left_pants_leg:true
 modelPart_right_pants_leg:true
 modelPart_hat:true
-fullscreenResolution:1920x1200@60:24
+fullscreenResolution:1280x1024@75:24
