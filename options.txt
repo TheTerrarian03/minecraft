@@ -44,7 +44,7 @@ biomeBlendRadius:2
 renderClouds:"fast"
 resourcePacks:["vanilla","file/Faithless1.20"]
 incompatibleResourcePacks:["file/Faithless1.20"]
-lastServer:
+lastServer:69.28.39.45:2048
 lang:en_us
 soundDevice:""
 chatVisibility:0
