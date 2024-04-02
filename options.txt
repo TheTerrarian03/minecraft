@@ -34,7 +34,7 @@ gamma:1.0
 renderDistance:12
 simulationDistance:10
 entityDistanceScaling:1.0
-guiScale:3
+guiScale:5
 particles:0
 maxFps:260
 graphicsMode:1
@@ -44,7 +44,7 @@ biomeBlendRadius:2
 renderClouds:"fast"
 resourcePacks:["vanilla","file/Faithless1.20"]
 incompatibleResourcePacks:["file/Faithless1.20"]
-lastServer:69.28.39.45:2048
+lastServer:169.204.229.118
 lang:en_us
 soundDevice:""
 chatVisibility:0
