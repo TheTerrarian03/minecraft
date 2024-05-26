@@ -1,0 +1,19 @@
+#Blocks
+3347: fenceGate.bloodwood from Natura - moonBlock from GalacticraftCore
+3348: fenceGate.hopseed from Natura - cheeseBlock from GalacticraftCore
+3350: fenceGate.silverbell from Natura - breatheableAir from GalacticraftCore
+3351: fenceGate.amaranth from Natura - landingPad from GalacticraftCore
+3352: fenceGate.tiger from Natura - landingPadFull from GalacticraftCore
+3353: fenceGate.willow from Natura - unlitTorch from GalacticraftCore
+3354: fenceGate.darkwood from Natura - unlitTorchLit from GalacticraftCore
+3355: fenceGate.fusewood from Natura - distributor from GalacticraftCore
+3356: blazerail from Natura - oxygenCompressor from GalacticraftCore
+3357: blazerail.powered from Natura - oxygenCollector from GalacticraftCore
+3358: blazerail.detector from Natura - refinery from GalacticraftCore
+3359: blazerail.activator from Natura - fuelLoader from GalacticraftCore
+3360: furnace.netherrack from Natura - sealer from GalacticraftCore
+3361: nether.obelisk from Natura - oxygenDetector from GalacticraftCore
+3362: nether.glass from Natura - cargo from GalacticraftCore
+3363: nether.hopper from Natura - machine from GalacticraftCore
+3368: lever from Natura - oxygenPipe from GalacticraftCore
+Suggested Ranges: 547-999 (453 IDs), 1502-1859 (358 IDs), 2365-2620 (256 IDs)

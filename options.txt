@@ -1,139 +1,113 @@
-version:3465
-autoJump:false
-operatorItemsTab:false
-autoSuggestions:true
+music:1.0
+sound:1.0
+invertYMouse:false
+mouseSensitivity:0.5
+fov:1.0
+gamma:1.0
+viewDistance:0
+guiScale:3
+particles:0
+bobView:true
+anaglyph3d:false
+advancedOpengl:true
+fpsLimit:1
+difficulty:2
+fancyGraphics:false
+ao:1
+clouds:true
+skin:Sphax_Attack of the BTeam Ver 1.0.12c 1.4 32x
+lastServer:192.168.1.219:25565
+lang:en_us
+chatVisibility:0
 chatColors:true
 chatLinks:true
 chatLinksPrompt:true
-enableVsync:false
-entityShadows:true
-forceUnicodeFont:false
-discrete_mouse_scroll:false
-invertYMouse:false
-realmsNotifications:true
-reducedDebugInfo:false
-showSubtitles:false
-directionalAudio:false
-touchscreen:false
-fullscreen:false
-bobView:true
-toggleCrouch:false
-toggleSprint:false
-darkMojangStudiosBackground:false
-hideLightningFlashes:false
-mouseSensitivity:0.5
-fov:1.0
-screenEffectScale:1.0
-fovEffectScale:1.0
-darknessEffectScale:1.0
-glintSpeed:0.5
-glintStrength:0.75
-damageTiltStrength:1.0
-highContrast:false
-gamma:1.0
-renderDistance:12
-simulationDistance:10
-entityDistanceScaling:1.0
-guiScale:5
-particles:0
-maxFps:260
-graphicsMode:1
-ao:true
-prioritizeChunkUpdates:0
-biomeBlendRadius:2
-renderClouds:"fast"
-resourcePacks:["vanilla","file/Faithless1.20"]
-incompatibleResourcePacks:["file/Faithless1.20"]
-lastServer:169.204.229.118
-lang:en_us
-soundDevice:""
-chatVisibility:0
 chatOpacity:1.0
-chatLineSpacing:0.0
-textBackgroundOpacity:0.5
-backgroundForChatOnly:true
+serverTextures:true
+snooperEnabled:true
+fullscreen:false
+enableVsync:false
 hideServerAddress:false
 advancedItemTooltips:true
 pauseOnLostFocus:true
+showCape:true
+touchscreen:false
 overrideWidth:0
 overrideHeight:0
+heldItemTooltips:true
 chatHeightFocused:1.0
-chatDelay:0.0
 chatHeightUnfocused:0.4375
 chatScale:1.0
 chatWidth:1.0
-notificationDisplayTime:1.0
-mipmapLevels:4
-useNativeTransport:true
-mainHand:"right"
-attackIndicator:1
-narrator:0
-tutorialStep:none
-mouseWheelSensitivity:10.0
-rawMouseInput:true
-glDebugVerbosity:1
-skipMultiplayerWarning:true
-skipRealms32bitWarning:false
-hideMatchedNames:true
-joinedFirstServer:true
-hideBundleTutorial:false
-syncChunkWrites:false
-showAutosaveIndicator:true
-allowServerListing:true
-onlyShowSecureChat:false
-panoramaScrollSpeed:1.0
-telemetryOptInExtra:false
-onboardAccessibility:false
-key_key.attack:key.mouse.left
-key_key.use:key.mouse.right
-key_key.forward:key.keyboard.w
-key_key.left:key.keyboard.a
-key_key.back:key.keyboard.s
-key_key.right:key.keyboard.d
-key_key.jump:key.keyboard.space
-key_key.sneak:key.keyboard.left.shift
-key_key.sprint:key.keyboard.r
-key_key.drop:key.keyboard.c
-key_key.inventory:key.keyboard.e
-key_key.chat:key.keyboard.enter
-key_key.playerlist:key.keyboard.backslash
-key_key.pickItem:key.mouse.middle
-key_key.command:key.keyboard.slash
-key_key.socialInteractions:key.keyboard.p
-key_key.screenshot:key.keyboard.f2
-key_key.togglePerspective:key.keyboard.f5
-key_key.smoothCamera:key.keyboard.unknown
-key_key.fullscreen:key.keyboard.f11
-key_key.spectatorOutlines:key.keyboard.unknown
-key_key.swapOffhand:key.keyboard.x
-key_key.saveToolbarActivator:key.keyboard.unknown
-key_key.loadToolbarActivator:key.keyboard.unknown
-key_key.advancements:key.keyboard.l
-key_key.hotbar.1:key.keyboard.1
-key_key.hotbar.2:key.keyboard.2
-key_key.hotbar.3:key.keyboard.3
-key_key.hotbar.4:key.keyboard.4
-key_key.hotbar.5:key.keyboard.5
-key_key.hotbar.6:key.keyboard.6
-key_key.hotbar.7:key.keyboard.7
-key_key.hotbar.8:key.keyboard.q
-key_key.hotbar.9:key.keyboard.f
-key_of.key.zoom:key.mouse.4
-soundCategory_master:1.0
-soundCategory_music:0.0
-soundCategory_record:1.0
-soundCategory_weather:0.18055861208920182
-soundCategory_block:1.0
-soundCategory_hostile:1.0
-soundCategory_neutral:1.0
-soundCategory_player:1.0
-soundCategory_ambient:1.0
-soundCategory_voice:1.0
-modelPart_cape:true
-modelPart_jacket:true
-modelPart_left_sleeve:true
-modelPart_right_sleeve:true
-modelPart_left_pants_leg:true
-modelPart_right_pants_leg:true
-modelPart_hat:true
-fullscreenResolution:1280x1024@75:24
+key_key.attack:-100
+key_key.use:-99
+key_key.forward:17
+key_key.left:30
+key_key.back:31
+key_key.right:32
+key_key.jump:57
+key_key.sneak:42
+key_key.drop:16
+key_key.inventory:18
+key_key.chat:20
+key_key.playerlist:15
+key_key.pickItem:-98
+key_Zoom:29
+key_key.command:53
+key_key.tarmor:24
+key_key.tcapes.reload:88
+key_Minions Menu:50
+key_key.archimedes.up:45
+key_key.archimedes.down:44
+key_key.archimedes.brake:46
+key_key.archimedes.align:13
+key_key.betterstorage.backpackOpen:48
+key_key.betterstorage.drinkingHelmet:33
+key_key.dragon.flyUp:19
+key_key.dragon.flyDown:33
+key_Accelerate Key:17
+key_Decelerate Key:31
+key_Left Key:30
+key_Right Key:32
+key_Up Key:57
+key_Down key:29
+key_Exit Key:42
+key_Inventory key:19
+key_Bomb Key:47
+key_Gun Key:48
+key_Control Switch key:46
+key_Roll Left Key:44
+key_Roll Right Key:45
+key_Gear Up / Down Key:38
+key_Door Open / Close Key:37
+key_Wing Reposition Key:36
+key_Trim Key:24
+key_Teams Menu Key:34
+key_Teams Scores Key:35
+key_Reload key:19
+key_Debug Key:68
+key_Reload Models Key:67
+key_[GC] Galaxy Map:50
+key_[GC] Open Spaceship Inventory:33
+key_[GC] Toggle Sensor Goggles Mode:37
+key_[GC] Vehicle Forward Key:17
+key_[GC] Vehicle Backward Key:31
+key_[GC] Vehicle Left Key:30
+key_[GC] Vehicle Right Key:32
+key_[GC] Vehicle Up Key:57
+key_[GC] Vehicle Down Key:42
+key_morph.keybinds:209
+key_Shoot Normal Tear:33
+key_Shoot Blood Tear:34
+key_Change OneWayBlock face:43
+key_Teleport (AdvGenetics):35
+key_Shoot fireballs (AdvGenetics):33
+key_Blow up yourself (AdvGenetics):22
+key_Shoot explosive fireballs (AdvGenetics):48
+key_Throw potions (AdvGenetics):25
+key_key.control:29
+key_waila.keybind.wailaconfig:82
+key_waila.keybind.wailadisplay:79
+key_waila.keybind.liquid:80
+key_waila.keybind.recipe:81
+key_waila.keybind.usage:75
