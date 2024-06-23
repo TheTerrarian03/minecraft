@@ -1,4 +1,5 @@
-#Sat May 25 23:25:27 PDT 2024
+#Mon Jun 03 10:12:15 PDT 2024
+shaderPack=Chocapic13_HighPerformance_Toaster.zip
 handDepthMul=0.0625
 TexMinFilB=0
 oldLighting=default
@@ -6,7 +7,6 @@ TexMagFilN=0
 tweakBlockDamage=false
 cloudShadow=false
 TexMagFilS=0
-shaderPack=BSL_v8.2.04.zip
 TexMinFilN=0
 specularMapEnabled=true
 normalMapEnabled=true
@@ -16,4 +16,4 @@ TexMinFilS=0
 shadowResMul=0.5
 shadowClipFrustrum=true
 TexMagFilB=0
-antialiasingLevel=0
+antialiasingLevel=2
